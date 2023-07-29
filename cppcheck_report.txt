@@ -1,0 +1,401 @@
+examples/network_server/server.c:119:19: style: The scope of the variable 'connfd' can be reduced. [variableScope]
+    int listenfd, connfd;
+                  ^
+examples/platformio/src/pio_esp32_idf.c:9:16: style: Variable 'status' is assigned a value that is never used. [unreadVariable]
+    int status = 0;
+               ^
+examples/platformio/src/pio_esp32_idf.c:21:5: style: Variable 'status' is assigned a value that is never used. [unreadVariable]
+    TEST(pb_encode(&ostream, &TestMessageWithoutOptions_msg, &original));
+    ^
+examples/platformio/src/pio_esp32_idf.c:29:5: style: Variable 'status' is assigned a value that is never used. [unreadVariable]
+    TEST(pb_decode(&istream, &TestMessageWithoutOptions_msg, &decoded));
+    ^
+examples/platformio/src/pio_esp32_idf.c:31:5: style: Variable 'status' is assigned a value that is never used. [unreadVariable]
+    TEST(decoded.number == 45);
+    ^
+pb_common.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 18 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+pb_common.c:208:18: style: The scope of the variable 'fieldinfo' can be reduced. [variableScope]
+        uint32_t fieldinfo;
+                 ^
+pb_common.c:255:18: style: The scope of the variable 'fieldinfo' can be reduced. [variableScope]
+        uint32_t fieldinfo;
+                 ^
+pb.h:82:0: error: No header in #include [preprocessorErrorDirective]
+#include PB_SYSTEM_HEADER
+^
+pb_common.c:334:35: style:inconclusive: Function 'pb_validate_utf8' argument 1 names different: declaration 's' definition 'str'. [funcArgNamesDifferent]
+bool pb_validate_utf8(const char *str)
+                                  ^
+pb_common.h:41:35: note: Function 'pb_validate_utf8' argument 1 names different: declaration 's' definition 'str'.
+bool pb_validate_utf8(const char *s);
+                                  ^
+pb_common.c:334:35: note: Function 'pb_validate_utf8' argument 1 names different: declaration 's' definition 'str'.
+bool pb_validate_utf8(const char *str)
+                                  ^
+pb_decode.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 23 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+pb_decode.c:1372:18: style: union member 'Anonymous2::fixed32' is never used. [unusedStructMember]
+        uint32_t fixed32;
+                 ^
+pb_decode.c:1395:18: style: union member 'Anonymous3::fixed64' is never used. [unusedStructMember]
+        uint64_t fixed64;
+                 ^
+pb_decode.c:598:5: error: Common realloc mistake: 'ptr' nulled but not freed upon failure [memleakOnRealloc]
+    ptr = pb_realloc(ptr, array_size * data_size);
+    ^
+pb_encode.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 22 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+tests/alltypes/decode_alltypes.c:302:19: style: The comparison 'status == 0' is always true. [knownConditionTrueFalse]
+    return status == 0;
+                  ^
+tests/alltypes/decode_alltypes.c:18:18: note: 'status' is assigned value '0' here.
+    int status = 0;
+                 ^
+tests/alltypes/decode_alltypes.c:302:19: note: The comparison 'status == 0' is always true.
+    return status == 0;
+                  ^
+tests/alltypes_callback/decode_alltypes_callback.c:289:38: style: Variable 'alltypes.req_uint32.funcs.decode' is reassigned a value before the old one has been used. [redundantAssignment]
+    alltypes.req_uint32.funcs.decode = &read_varint;
+                                     ^
+tests/alltypes_callback/decode_alltypes_callback.c:286:38: note: alltypes.req_uint32.funcs.decode is assigned
+    alltypes.req_uint32.funcs.decode = &read_varint;
+                                     ^
+tests/alltypes_callback/decode_alltypes_callback.c:289:38: note: alltypes.req_uint32.funcs.decode is overwritten
+    alltypes.req_uint32.funcs.decode = &read_varint;
+                                     ^
+tests/alltypes_callback/decode_alltypes_callback.c:290:29: style: Variable 'alltypes.req_uint32.arg' is reassigned a value before the old one has been used. [redundantAssignment]
+    alltypes.req_uint32.arg = (void*)1003;
+                            ^
+tests/alltypes_callback/decode_alltypes_callback.c:287:29: note: alltypes.req_uint32.arg is assigned
+    alltypes.req_uint32.arg = (void*)1003;
+                            ^
+tests/alltypes_callback/decode_alltypes_callback.c:290:29: note: alltypes.req_uint32.arg is overwritten
+    alltypes.req_uint32.arg = (void*)1003;
+                            ^
+tests/alltypes_callback/encode_alltypes_callback.c:286:38: style: Variable 'alltypes.req_uint32.funcs.encode' is reassigned a value before the old one has been used. [redundantAssignment]
+    alltypes.req_uint32.funcs.encode = &write_varint;
+                                     ^
+tests/alltypes_callback/encode_alltypes_callback.c:283:38: note: alltypes.req_uint32.funcs.encode is assigned
+    alltypes.req_uint32.funcs.encode = &write_varint;
+                                     ^
+tests/alltypes_callback/encode_alltypes_callback.c:286:38: note: alltypes.req_uint32.funcs.encode is overwritten
+    alltypes.req_uint32.funcs.encode = &write_varint;
+                                     ^
+tests/alltypes_callback/encode_alltypes_callback.c:287:29: style: Variable 'alltypes.req_uint32.arg' is reassigned a value before the old one has been used. [redundantAssignment]
+    alltypes.req_uint32.arg = (void*)1003;
+                            ^
+tests/alltypes_callback/encode_alltypes_callback.c:284:29: note: alltypes.req_uint32.arg is assigned
+    alltypes.req_uint32.arg = (void*)1003;
+                            ^
+tests/alltypes_callback/encode_alltypes_callback.c:287:29: note: alltypes.req_uint32.arg is overwritten
+    alltypes.req_uint32.arg = (void*)1003;
+                            ^
+tests/alltypes_pointer/decode_alltypes_pointer.c:171:19: style: The comparison 'status == 0' is always true. [knownConditionTrueFalse]
+    return status == 0;
+                  ^
+tests/alltypes_pointer/decode_alltypes_pointer.c:13:18: note: 'status' is assigned value '0' here.
+    int status = 0;
+                 ^
+tests/alltypes_pointer/decode_alltypes_pointer.c:171:19: note: The comparison 'status == 0' is always true.
+    return status == 0;
+                  ^
+tests/alltypes_proto3/decode_alltypes.c:139:19: style: The comparison 'status == 0' is always true. [knownConditionTrueFalse]
+    return status == 0;
+                  ^
+tests/alltypes_proto3/decode_alltypes.c:18:18: note: 'status' is assigned value '0' here.
+    int status = 0;
+                 ^
+tests/alltypes_proto3/decode_alltypes.c:139:19: note: The comparison 'status == 0' is always true.
+    return status == 0;
+                  ^
+tests/any_type/decode_any.c:15:10: style: The scope of the variable 'status' can be reduced. [variableScope]
+    bool status;
+         ^
+tests/common/malloc_wrappers.c:71:9: error: Memory leak: buf [memleak]
+        return buf + PREFIX_SIZE;
+        ^
+tests/common/malloc_wrappers.c:125:17: error: Common realloc mistake: 'buf' nulled but not freed upon failure [memleakOnRealloc]
+                buf = realloc(buf, new_rounded);
+                ^
+tests/common_unittests/common_unittests.c:145:16: style: The comparison 'status != 0' is always false. [knownConditionTrueFalse]
+    if (status != 0)
+               ^
+tests/common_unittests/common_unittests.c:11:18: note: 'status' is assigned value '0' here.
+    int status = 0;
+                 ^
+tests/common_unittests/common_unittests.c:145:16: note: The comparison 'status != 0' is always false.
+    if (status != 0)
+               ^
+tests/cxx_descriptor/message_descriptor.cc:26:14: style: The comparison 'status != 0' is always false. [knownConditionTrueFalse]
+  if (status != 0) fprintf(stdout, "\n\nSome tests FAILED!\n");
+             ^
+tests/cxx_descriptor/message_descriptor.cc:15:16: note: 'status' is assigned value '0' here.
+  int status = 0;
+               ^
+tests/cxx_descriptor/message_descriptor.cc:26:14: note: The comparison 'status != 0' is always false.
+  if (status != 0) fprintf(stdout, "\n\nSome tests FAILED!\n");
+             ^
+tests/cyclic_messages/encode_cyclic_callback.c:63:9: style: The scope of the variable 'textlen' can be reduced. [variableScope]
+    int textlen;
+        ^
+tests/decode_unittests/decode_unittests.c:442:16: style: The comparison 'status != 0' is always false. [knownConditionTrueFalse]
+    if (status != 0)
+               ^
+tests/decode_unittests/decode_unittests.c:44:18: note: 'status' is assigned value '0' here.
+    int status = 0;
+                 ^
+tests/decode_unittests/decode_unittests.c:442:16: note: The comparison 'status != 0' is always false.
+    if (status != 0)
+               ^
+tests/decode_unittests/decode_unittests.c:113:36: error: Expression 's=pb_istream_from_buffer((uint8_t*)"\x00foobar",sizeof("\x00foobar")-1),pb_skip_varint(&s)&&s.bytes_left==6' depends on order of evaluation of side effects [unknownEvaluationOrder]
+        TEST((s = S("\x00""foobar"), pb_skip_varint(&s) && s.bytes_left == 6))
+                                   ^
+tests/decode_unittests/decode_unittests.c:114:40: error: Expression 's=pb_istream_from_buffer((uint8_t*)"\xac\x02foobar",sizeof("\xac\x02foobar")-1),pb_skip_varint(&s)&&s.bytes_left==6' depends on order of evaluation of side effects [unknownEvaluationOrder]
+        TEST((s = S("\xAC\x02""foobar"), pb_skip_varint(&s) && s.bytes_left == 6))
+                                       ^
+tests/decode_unittests/decode_unittests.c:115:72: error: Expression 's=pb_istream_from_buffer((uint8_t*)"\xff\xff\xff\xff\xff\xff\xff\xff\xff\x01foobar",sizeof("\xff\xff\xff\xff\xff\xff\xff\xff\xff\x01foobar")-1),pb_skip_varint(&s)&&s.bytes_left==6' depends on order of evaluation of side effects [unknownEvaluationOrder]
+        TEST((s = S("\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF\x01""foobar"),
+                                                                       ^
+tests/decode_unittests/decode_unittests.c:123:36: error: Expression 's=pb_istream_from_buffer((uint8_t*)"\x00foobar",sizeof("\x00foobar")-1),pb_skip_string(&s)&&s.bytes_left==6' depends on order of evaluation of side effects [unknownEvaluationOrder]
+        TEST((s = S("\x00""foobar"), pb_skip_string(&s) && s.bytes_left == 6))
+                                   ^
+tests/decode_unittests/decode_unittests.c:124:40: error: Expression 's=pb_istream_from_buffer((uint8_t*)"\x04testfoobar",sizeof("\x04testfoobar")-1),pb_skip_string(&s)&&s.bytes_left==6' depends on order of evaluation of side effects [unknownEvaluationOrder]
+        TEST((s = S("\x04""testfoobar"), pb_skip_string(&s) && s.bytes_left == 6))
+                                       ^
+tests/encode_unittests/encode_unittests.c:425:16: style: The comparison 'status != 0' is always false. [knownConditionTrueFalse]
+    if (status != 0)
+               ^
+tests/encode_unittests/encode_unittests.c:51:18: note: 'status' is assigned value '0' here.
+    int status = 0;
+                 ^
+tests/encode_unittests/encode_unittests.c:425:16: note: The comparison 'status != 0' is always false.
+    if (status != 0)
+               ^
+tests/enum_sizes/enumsizes_intsize_unittests.cc:13:14: style: The comparison 'status != 0' is always false. [knownConditionTrueFalse]
+  if (status != 0) fprintf(stdout, "\n\nSome tests FAILED!\n");
+             ^
+tests/enum_sizes/enumsizes_intsize_unittests.cc:6:16: note: 'status' is assigned value '0' here.
+  int status = 0;
+               ^
+tests/enum_sizes/enumsizes_intsize_unittests.cc:13:14: note: The comparison 'status != 0' is always false.
+  if (status != 0) fprintf(stdout, "\n\nSome tests FAILED!\n");
+             ^
+tests/enum_to_string/enum_to_string.c:14:16: style: The comparison 'status != 0' is always false. [knownConditionTrueFalse]
+    if (status != 0)
+               ^
+tests/enum_to_string/enum_to_string.c:7:18: note: 'status' is assigned value '0' here.
+    int status = 0;
+                 ^
+tests/enum_to_string/enum_to_string.c:14:16: note: The comparison 'status != 0' is always false.
+    if (status != 0)
+               ^
+tests/field_size_16_proto3/decode_alltypes.c:139:19: style: The comparison 'status == 0' is always true. [knownConditionTrueFalse]
+    return status == 0;
+                  ^
+tests/field_size_16_proto3/decode_alltypes.c:19:18: note: 'status' is assigned value '0' here.
+    int status = 0;
+                 ^
+tests/field_size_16_proto3/decode_alltypes.c:139:19: note: The comparison 'status == 0' is always true.
+    return status == 0;
+                  ^
+tests/fixed_count/fixed_count_unittests.c:23:21: style: Variable 'msg_a.data[0]' is reassigned a value before the old one has been used. [redundantAssignment]
+      msg_a.data[0] = 2;
+                    ^
+tests/fixed_count/fixed_count_unittests.c:22:21: note: msg_a.data[0] is assigned
+      msg_a.data[0] = 1;
+                    ^
+tests/fixed_count/fixed_count_unittests.c:23:21: note: msg_a.data[0] is overwritten
+      msg_a.data[0] = 2;
+                    ^
+tests/fixed_count/fixed_count_unittests.c:24:21: style: Variable 'msg_a.data[0]' is reassigned a value before the old one has been used. [redundantAssignment]
+      msg_a.data[0] = 3;
+                    ^
+tests/fixed_count/fixed_count_unittests.c:23:21: note: msg_a.data[0] is assigned
+      msg_a.data[0] = 2;
+                    ^
+tests/fixed_count/fixed_count_unittests.c:24:21: note: msg_a.data[0] is overwritten
+      msg_a.data[0] = 3;
+                    ^
+tests/fixed_count/fixed_count_unittests.c:186:16: style: The comparison 'status != 0' is always false. [knownConditionTrueFalse]
+    if (status != 0)
+               ^
+tests/fixed_count/fixed_count_unittests.c:11:18: note: 'status' is assigned value '0' here.
+    int status = 0;
+                 ^
+tests/fixed_count/fixed_count_unittests.c:186:16: note: The comparison 'status != 0' is always false.
+    if (status != 0)
+               ^
+tests/float_double_conversion/float_double_conversion.c:21:0: information: Skipping configuration 'INFINITY;NAN' since the value of 'INFINITY' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+      INFINITY,   -INFINITY,         NAN, INFINITY - INFINITY,
+^
+tests/float_double_conversion/float_double_conversion.c:21:0: information: Skipping configuration 'INFINITY;NAN' since the value of 'NAN' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+      INFINITY,   -INFINITY,         NAN, INFINITY - INFINITY,
+^
+tests/fuzztest/fuzztest.c:201:25: style: The scope of the variable 'checksum3' can be reduced. [variableScope]
+    uint32_t checksum2, checksum3;
+                        ^
+tests/fuzztest/fuzztest.c:202:21: style: The scope of the variable 'msglen3' can be reduced. [variableScope]
+    size_t msglen2, msglen3;
+                    ^
+tests/fuzztest/fuzztest.c:426:9: style: The scope of the variable 'i' can be reduced. [variableScope]
+    int i;
+        ^
+tests/fuzztest/fuzztest.c:427:9: style: The scope of the variable 'iterations' can be reduced. [variableScope]
+    int iterations;
+        ^
+tests/fuzztest/random_data.c:120:22: style: Local variable 'buf' shadows outer argument [shadowArgument]
+            uint8_t *buf;
+                     ^
+tests/fuzztest/random_data.c:87:36: note: Shadowed declaration
+size_t rand_fill_protobuf(uint8_t *buf, size_t min_bytes, size_t max_bytes, int min_tag)
+                                   ^
+tests/fuzztest/random_data.c:120:22: note: Shadow variable
+            uint8_t *buf;
+                     ^
+tests/infinity_nan/infinity_nan_test.c:40:19: style: The comparison 'status == 0' is always true. [knownConditionTrueFalse]
+    return status == 0;
+                  ^
+tests/infinity_nan/infinity_nan_test.c:10:18: note: 'status' is assigned value '0' here.
+    int status = 0;
+                 ^
+tests/infinity_nan/infinity_nan_test.c:40:19: note: The comparison 'status == 0' is always true.
+    return status == 0;
+                  ^
+tests/inline/inline_unittests.c:69:16: style: The comparison 'status != 0' is always false. [knownConditionTrueFalse]
+    if (status != 0)
+               ^
+tests/inline/inline_unittests.c:10:18: note: 'status' is assigned value '0' here.
+    int status = 0;
+                 ^
+tests/inline/inline_unittests.c:69:16: note: The comparison 'status != 0' is always false.
+    if (status != 0)
+               ^
+tests/intsizes/intsizes_unittests.c:141:16: style: The comparison 'status != 0' is always false. [knownConditionTrueFalse]
+    if (status != 0)
+               ^
+tests/intsizes/intsizes_unittests.c:72:18: note: 'status' is assigned value '0' here.
+    int status = 0;
+                 ^
+tests/intsizes/intsizes_unittests.c:141:16: note: The comparison 'status != 0' is always false.
+    if (status != 0)
+               ^
+tests/regression/issue_172/msg_size.c:3:1: error: There is an unknown macro here somewhere. Configuration is required. If PB_STATIC_ASSERT is a macro then please configure it. [unknownMacro]
+PB_STATIC_ASSERT(testmessage_size >= 1+1+1+1+16, TESTMESSAGE_SIZE_IS_WRONG)
+^
+tests/regression/issue_504/test.c:35:13: error: Memory leak: pStr [memleak]
+            return 1;
+            ^
+tests/regression/issue_838/enum_to_string.cxx:14:16: style: The comparison 'status != 0' is always false. [knownConditionTrueFalse]
+    if (status != 0)
+               ^
+tests/regression/issue_838/enum_to_string.cxx:7:18: note: 'status' is assigned value '0' here.
+    int status = 0;
+                 ^
+tests/regression/issue_838/enum_to_string.cxx:14:16: note: The comparison 'status != 0' is always false.
+    if (status != 0)
+               ^
+tests/site_scons/platforms/avr/run_test.c:66:33: warning: The address of local variable 'g_args' might be accessed at non-zero index. [objectIndex]
+            v = ((char*)&g_args)[g_args_idx++];
+                                ^
+tests/site_scons/platforms/avr/run_test.c:66:25: note: Address of variable taken here.
+            v = ((char*)&g_args)[g_args_idx++];
+                        ^
+tests/site_scons/platforms/avr/run_test.c:66:33: note: The address of local variable 'g_args' might be accessed at non-zero index.
+            v = ((char*)&g_args)[g_args_idx++];
+                                ^
+tests/stackusage/stackusage.c:26:35: warning: The address of local variable 'i' might be accessed at non-zero index. [objectIndex]
+        g_stackbuf[i] = g_stackptr[i];
+                                  ^
+tests/stackusage/stackusage.c:23:50: note: Address of variable taken here.
+    g_stackptr = (volatile uint32_t*)((uintptr_t)&i - MAX_STACK_ENTRIES * sizeof(uint32_t));
+                                                 ^
+tests/stackusage/stackusage.c:26:35: note: The address of local variable 'i' might be accessed at non-zero index.
+        g_stackbuf[i] = g_stackptr[i];
+                                  ^
+tests/typename_mangling/test_flatten.c:17:23: style: Variable 'msg.short_if_none' is assigned a value that is never used. [unreadVariable]
+    msg.short_if_none = ShortIfNone_IfNone_A;
+                      ^
+tests/typename_mangling/test_flatten.c:18:32: style: Variable 'msg.short_if_strip_package' is assigned a value that is never used. [unreadVariable]
+    msg.short_if_strip_package = ShortIfStripPackage_IfPackage_A;
+                               ^
+tests/typename_mangling/test_flatten.c:19:26: style: Variable 'msg.short_if_flatten' is assigned a value that is never used. [unreadVariable]
+    msg.short_if_flatten = IfFlatten_A;
+                         ^
+tests/typename_mangling/test_package_initials.c:14:23: style: Variable 'msg.short_if_none' is assigned a value that is never used. [unreadVariable]
+    msg.short_if_none = cen_TopLevelMessage_ShortIfNone_IfNone_A;
+                      ^
+tests/typename_mangling/test_package_initials.c:15:32: style: Variable 'msg.short_if_strip_package' is assigned a value that is never used. [unreadVariable]
+    msg.short_if_strip_package = cen_TopLevelMessage_ShortIfStripPackage_IfPackage_A;
+                               ^
+tests/typename_mangling/test_package_initials.c:16:26: style: Variable 'msg.short_if_flatten' is assigned a value that is never used. [unreadVariable]
+    msg.short_if_flatten = cen_TopLevelMessage_ShortIfFlatten_IfFlatten_A;
+                         ^
+tests/typename_mangling/test_strip_package.c:14:23: style: Variable 'msg.short_if_none' is assigned a value that is never used. [unreadVariable]
+    msg.short_if_none = TopLevelMessage_ShortIfNone_IfNone_A;
+                      ^
+tests/typename_mangling/test_strip_package.c:15:32: style: Variable 'msg.short_if_strip_package' is assigned a value that is never used. [unreadVariable]
+    msg.short_if_strip_package = TopLevelMessage_IfPackage_A;
+                               ^
+tests/typename_mangling/test_strip_package.c:16:26: style: Variable 'msg.short_if_flatten' is assigned a value that is never used. [unreadVariable]
+    msg.short_if_flatten = TopLevelMessage_ShortIfFlatten_IfFlatten_A;
+                         ^
+tests/without_64bit/decode_alltypes.c:155:19: style: The comparison 'status == 0' is always true. [knownConditionTrueFalse]
+    return status == 0;
+                  ^
+tests/without_64bit/decode_alltypes.c:20:18: note: 'status' is assigned value '0' here.
+    int status = 0;
+                 ^
+tests/without_64bit/decode_alltypes.c:155:19: note: The comparison 'status == 0' is always true.
+    return status == 0;
+                  ^
+pb_encode.c:57:18: error: Null pointer dereference: buf [ctunullpointer]
+    memcpy(dest, buf, count * sizeof(pb_byte_t));
+                 ^
+pb_encode.c:177:28: note: Calling function pb_write, 2nd argument is null
+            return pb_write(stream, NULL, size); /* Just sizing.. */
+                           ^
+pb_encode.c:94:14: note: Calling function buf_write, 2nd argument is null
+        if (!buf_write(stream, buf, count))
+             ^
+pb_encode.c:57:18: note: Dereferencing argument buf that is null
+    memcpy(dest, buf, count * sizeof(pb_byte_t));
+                 ^
+examples/network_server/client.c:30:0: style: The function 'ListFilesResponse_callback' is never used. [unusedFunction]
+
+^
+tests/oneof_callback/decode_oneof.c:16:0: style: The function 'SubMsg3_callback' is never used. [unusedFunction]
+
+^
+tests/cxx_callback_datatype/cxx_callback_datatype.cpp:36:0: style: The function 'TestMessage_callback' is never used. [unusedFunction]
+
+^
+tests/site_scons/platforms/avr/avr_io.c:37:0: style: The function 'abort' is never used. [unusedFunction]
+
+^
+tests/msgid/decode_msgid.c:23:0: style: The function 'handle_MyMessage1' is never used. [unusedFunction]
+
+^
+tests/msgid/decode_msgid.c:34:0: style: The function 'handle_MyMessage2' is never used. [unusedFunction]
+
+^
+tests/msgid/decode_msgid.c:46:0: style: The function 'handle_MyMessage3' is never used. [unusedFunction]
+
+^
+pb_common.c:300:0: style: The function 'pb_default_field_callback' is never used. [unusedFunction]
+
+^
+pb_encode.c:535:0: style: The function 'pb_encode_ex' is never used. [unusedFunction]
+
+^
+tests/site_scons/platforms/stm32/vectors.c:36:0: style: The function 'ramboot' is never used. [unusedFunction]
+
+^
+tests/common/malloc_wrappers.c:101:0: style: The function 'realloc_with_check' is never used. [unusedFunction]
+
+^
+nofile:0:0: information: Cppcheck cannot find all the include files (use --check-config for details) [missingInclude]
+
